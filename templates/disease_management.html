@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Diseases By Stage</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script>
+        function showStageList() {
+            var stages = document.getElementsByClassName('stage');
+            for (var i = 0; i < stages.length; i++) {
+                stages[i].style.display = 'none';
+            }
+            document.getElementById('stage-list').style.display = 'block';
+        }
+
+        function showDiseases(stageId) {
+            var stages = document.getElementsByClassName('stage');
+            for (var i = 0; i < stages.length; i++) {
+                stages[i].style.display = 'none';
+            }
+            document.getElementById(stageId).style.display = 'block';
+            document.getElementById('stage-list').style.display = 'none';
+            window.history.pushState({stage: stageId}, '', '?stage=' + stageId);
+        }
+
+        window.onload = function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var stage = urlParams.get('stage');
+            if (stage) {
+                showDiseases(stage);
+            } else {
+                showStageList();
+            }
+        };
+
+        window.onpopstate = function(event) {
+            if (event.state && event.state.stage) {
+                showDiseases(event.state.stage);
+            } else {
+                showStageList();
+            }
+        };
+    </script>
+</head>
+<body class="disease-management">
+    <div class="container">
+        <div class="content-background">
+        <h2>Diseases By Stage</h2>
+        <div id="stage-list" class="stage-list">
+            <button onclick="showDiseases('seeding')">Seeding Stage</button>
+            <button onclick="showDiseases('vegetative')">Vegetative Stage</button>
+            <button onclick="showDiseases('flowering')">Flowering Stage</button>
+            <button onclick="showDiseases('fruiting')">Fruiting Stage</button>
+            <button onclick="showDiseases('harvesting')">Harvesting Stage</button>
+        </div>
+        <div id="seeding" class="stage" style="display: none;">
+            <h3>Seeding Stage</h3>
+                <div class="diseases-grid">
+                    {% for disease in diseases if disease.stage == 'Seeding' %}
+                            <div class="disease-card">
+                             <a href="{{ url_for('disease_info', disease_id=disease.id) }}">
+                                 <img src="{{ url_for('static', filename='images/' + disease.name.lower().replace(' ', '_') + '.png') }}" alt="{{ disease.name }}">
+                                <p>{{ disease.name }}</p>
+                            </a>
+                        </div>
+                    {% endfor %}
+                </div>
+            
+        </div>
+        <div id="vegetative" class="stage" style="display: none;">
+            <h3>Vegetative Stage</h3>
+            <div class="diseases-grid">
+                {% for disease in diseases if disease.stage == 'Vegetative' %}
+                    <div class="disease-card">
+                        <a href="{{ url_for('disease_info', disease_id=disease.id) }}">
+                            <img src="{{ url_for('static', filename='images/' + disease.name.lower().replace(' ', '_') + '.png') }}" alt="{{ disease.name }}">
+                            <p>{{ disease.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="flowering" class="stage" style="display: none;">
+            <h3>Flowering Stage</h3>
+            <div class="diseases-grid">
+                {% for disease in diseases if disease.stage == 'Flowering' %}
+                    <div class="disease-card">
+                        <a href="{{ url_for('disease_info', disease_id=disease.id) }}">
+                            <img src="{{ url_for('static', filename='images/' + disease.name.lower().replace(' ', '_') + '.png') }}" alt="{{ disease.name }}">
+                            <p>{{ disease.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="fruiting" class="stage" style="display: none;">
+            <h3>Fruiting Stage</h3>
+            <div class="diseases-grid">
+                {% for disease in diseases if disease.stage == 'Fruiting' %}
+                    <div class="disease-card">
+                        <a href="{{ url_for('disease_info', disease_id=disease.id) }}">
+                            <img src="{{ url_for('static', filename='images/' + disease.name.lower().replace(' ', '_') + '.png') }}" alt="{{ disease.name }}">
+                            <p>{{ disease.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div id="harvesting" class="stage" style="display: none;">
+            <h3>Harvesting Stage</h3>
+            <div class="diseases-grid">
+                {% for disease in diseases if disease.stage == 'Harvesting' %}
+                    <div class="disease-card">
+                        <a href="{{ url_for('disease_info', disease_id=disease.id) }}">
+                            <img src="{{ url_for('static', filename='images/' + disease.name.lower().replace(' ', '_') + '.png') }}" alt="{{ disease.name }}">
+                            <p>{{ disease.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

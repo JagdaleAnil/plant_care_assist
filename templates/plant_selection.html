@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" class="plant-selection">
+<head>
+    <meta charset="UTF-8">
+    <title>Plant Selection</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="plant-selection">
+    <div class="container">
+        <div class="content-background">
+            <h2>Plant Selection</h2>
+            <div class="plant-list-horizontal">
+                {% for plant in plants %}
+                    <div class="plant-box">
+                        <a href="{{ url_for('disease_management', plant_id=plant.id) }}">
+                            <img src="{{ url_for('static', filename='images/' + plant.name.lower().replace(' ', '_') + '.png') }}" alt="{{ plant.name }}">
+                            <p>{{ plant.name }}</p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

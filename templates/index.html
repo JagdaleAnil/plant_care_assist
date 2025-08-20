@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome to Our Project</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="main-page">
+    <header>
+        <div class="headline">
+            <h1>Welcome to Our Plant Care Assist Project</h1>
+        </div>
+    </header>
+    <main>
+        <div class="white-container">
+            <section class="buttons-section">
+                <button onclick="location.href='{{ url_for('login') }}'">Login/Register</button>
+                <button onclick="location.href='{{ url_for('about') }}'">About Us</button>
+                <button onclick="location.href='{{ url_for('features') }}'">Features</button>
+                <button onclick="location.href='{{ url_for('contact') }}'">Contact</button>
+            </section>
+        </div>
+    </main>
+</body>
+</html>

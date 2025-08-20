@@ -1,0 +1,866 @@
+/* General Styles */
+html, body {
+    font-family: 'Roboto', sans-serif; 
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    scroll-behavior: smooth;
+    background-color: #f4f4f4; /* Light background color */
+}
+
+/* Background Image Styles for Login and Registration Pages */
+html.login-page, body.login-page,
+html.register-page, body.register-page,
+html.plant-selection, body.plant-selection {
+    background: url('../images/agricultural_field.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Background Image Styles for Disease Management Pages */
+html.disease-management, body.disease-management {
+    background: url('../images/disease_management_background.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Main Page Styles */
+html.main-page, body.main-page {
+    background: url('../images/background.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #333;
+    overflow: hidden;
+}
+header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+header h1 {
+    color: #2e7d32;
+    margin-bottom: 20px;
+}
+
+
+/* Login and Register Container */
+.login-container, .register-container {
+    width: 100%;
+    max-width: 400px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Heading */
+h2 {
+    color: #38ee0b;
+    margin-bottom: 10px;
+    font-size: 2.5em;
+    text-shadow: 2px 2px #3d3d3d;
+}
+
+/* Subheading */
+p {
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.login-button {
+    width: 48%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.login-button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.login-button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
+/* Input Containers */
+.input-container {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+.input-container label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #2e7d32;
+}
+
+.input-container input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border-color 0.3s;
+}
+
+.input-container input:focus {
+    border-color: #38ee0b;
+    box-shadow: 0 0 5px rgba(56, 238, 11, 0.5);
+}
+
+/* Toggle Password */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 65%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #2e7d32;
+}
+
+/* Submit Button */
+button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+/* Links */
+a {
+    color: #2e7d32;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* White Container */
+
+
+.white-container {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 40px 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    margin-top: 120px;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    
+}
+
+.buttons-section {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.buttons-section button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 15px 30px;
+    margin: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.buttons-section button:hover {
+    background-color: #037108;
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #4caf50;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto;
+}
+
+/* Plain Background for Disease Info Page */
+html.disease-info, body.disease-info {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* Content Background */
+.content-background {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Login and Register Animations */
+.login-form {
+    display: none;
+    animation: slide-down 0.3s ease;
+}
+
+.login-form.active {
+    display: block;
+}
+
+@keyframes slide-down {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Plant Selection */
+.plant-list-horizontal {
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    gap: 20px;
+    padding: 20px;
+}
+
+.plant-box {
+    background: #e8f5e9;
+    padding: 5px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+    flex: 0 0 auto;
+    width: 100px;
+}
+
+.plant-box:hover {
+    transform: scale(1.1);
+    background: #c8e6c9;
+}
+
+.plant-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+.plant-box p {
+    color: #2e7d32;
+    font-size: 0.9em;
+}
+
+/* Disease Management */
+.stage-list {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.stage-list button {
+    background-color: #00796b;
+    color: #f5f5f5;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.stage-list button:hover {
+    background-color: #004d40;
+}
+
+.disease-card {
+    background: #e8f5e9;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s, background 0.3s;
+}
+
+.disease-card:hover {
+    transform: scale(1.05);
+    background: #c8e6c9;
+}
+
+.disease-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.disease-card p {
+    color: #2e7d32;
+    font-size: 0.9em;
+}
+
+
+
+
+
+/* Diseases Grid - Horizontal Layout */
+.diseases-grid {
+    display: flex; /* Flexbox for horizontal alignment */
+    flex-wrap: nowrap; /* Prevent wrapping to new rows */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    gap: 20px; /* Add space between cards */
+    padding: 20px; /* Ensure internal padding */
+    white-space: nowrap; /* Prevent line breaks for items */
+    scroll-behavior: smooth; /* Smooth scrolling */
+    box-sizing: border-box; /* Include padding in width calculations */
+}
+
+/* Parent Container for Seeding Stage */
+.disease-grid-container {
+    width: 100%; /* Take full width */
+    overflow: hidden; /* Avoid overflowing content */
+    padding: 0; /* Reset any padding */
+    margin: 0; /* Remove any unintended margins */
+    box-sizing: border-box;
+}
+
+.diseases-grid {
+    display: flex !important;
+}
+
+
+
+
+.disease-card {
+    flex: 0 0 auto; /* Prevent shrinking or stretching of items */
+    width: 200px; /* Fixed width for cards */
+    background: #e8f5e9; /* Light green background */
+    padding: 10px; /* Padding inside each card */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center; /* Align text within the cards */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+}
+
+.disease-card img {
+    width: 100%; /* Full width of the card */
+    height: 150px; /* Fixed height for images */
+    object-fit: cover; /* Maintain aspect ratio and crop excess */
+    border-radius: 5px; /* Rounded image corners */
+}
+
+.disease-card p {
+    color: #2e7d32; /* Green text */
+    font-size: 0.9em; /* Font size */
+    margin-top: 10px; /* Space between image and text */
+}
+
+/* Modal Styles (if needed) */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Tooltip Styles */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* General Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+.p-10 {
+    padding: 10px;
+}
+
+.bg-light {
+    background-color: #f8f9fa;
+}
+
+.border {
+    border: 1px solid #ccc;
+}
+
+.rounded {
+    border-radius: 5px;
+}
+
+/* Disease Info Page */
+.disease-info-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.disease-info-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.disease-info-top img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 10px;
+    margin-right: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.disease-info-content {
+    flex: 1;
+    padding: 20px;
+    background: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.disease-info-content h3 {
+    color: #2e7d32;
+    margin-bottom: 10px;
+}
+
+.disease-info-content p {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.disease-info-bottom {
+    padding: 20px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    margin-top: 20px;
+    text-align: center;
+}
+
+.disease-info-bottom button {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.disease-info-bottom button:hover {
+    background-color: #388e3c;
+    transform: scale(1.05);
+}
+
+.disease-info-bottom a {
+    color: #2e7d32;
+    font-weight: bold;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.disease-info-bottom a:hover {
+    text-decoration: underline;
+    color: #1b5e20;
+}
+
+
+
+/* Responsive Styles for Disease Info */
+@media (max-width: 768px) {
+    .disease-info-container {
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .disease-info-top {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .disease-info-top img {
+        max-width: 100%;
+        margin: 0 0 15px 0;
+    }
+
+    .disease-info-content {
+        padding: 15px;
+    }
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-top: 4px solid #38ee0b;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    display: none;
+    margin: 10px auto;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* General Responsive Adjustments */
+@media (max-width: 480px) {
+    h2 {
+        font-size: 1.8em;
+    }
+
+    .disease-info-content p {
+        font-size: 0.9em;
+    }
+
+    button {
+        font-size: 14px;
+    }
+
+    .plant-box {
+        width: 90%; /* Adjust to fit smaller screens */
+    }
+
+    .plant-list-horizontal {
+        gap: 10px;
+        padding: 10px;
+    }
+}
+
+
+/* Main container styles */
+.about-container {
+    max-width: 900px;
+    margin: 0px auto;
+    padding: 10px;
+    background: white; /* Changed to white */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0px;
+}
+
+/* Headings */
+h1, h2 {
+    color: #4caf50;
+}
+
+/* Paragraphs */
+p {
+    color: #333333;
+}
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 5px 0;
+    background-color: #4ac561;
+    color: rgb(244, 241, 241);
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}
+/* Header styles */
+header {
+    background-color: #4ac561;
+    color: white;
+    text-align: center;
+    padding: 7px 0;
+}
+/* Main container styles */
+.feature-container {
+    max-width: 900px;
+    margin: 0px auto;
+    padding: 20px;
+    background: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+/* Headings */
+h1, h2 {
+    color: #4caf50;
+    text-align: center;
+}
+/* List styles */
+ul {
+    list-style-type: square;
+    margin: 20px;
+    padding-left: 30px;
+}
+
+li {
+    color: #333333;
+    padding: 4px 0;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 5px 0;
+    background-color: #4ac561;
+    color: rgb(244, 241, 241);
+    font-size: 14px; /* Fixed typo */
+    margin-top: 10px;
+    width: 100vw; /* Ensures the footer takes up the full width of the viewport */
+    position: fixed; /* Fixes the footer at the bottom of the viewport */
+    bottom: 0; /* Keeps the footer at the very bottom */
+    left: 0; /* Aligns the footer to the left edge of the viewport */
+    box-sizing: border-box; /* Includes padding and border in the width calculation */
+    overflow: hidden; /* Hides any overflowing content */
+}
+/* Contact Page middle container */
+.contact-container {
+    max-width: 900px;
+    margin: 0px auto; /* Centers the container and adds vertical spacing */
+    padding: 40px;
+    background: white; /* White background for the container */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds subtle shadow for depth */
+    border-radius: 8px; /* Smooth rounded corners */
+}
+/* Headings inside container */
+.contact-container h1, .contact-container h2 {
+    color: #4caf50; /* Green accent for headings */
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+/* List styles */
+.contact-container ul {
+    list-style-type: square; /* Square bullet points */
+    margin: 20px;
+    padding-left: 30px;
+}
+
+.contact-container li {
+    color: #333333; /* Text color for list items */
+    padding: 4px 0;
+}
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 5px 0;
+    background-color: #4ac561;
+    color: rgb(244, 241, 241);
+    font-size: 14px;
+    position: fixed; /* Fixes the footer at the bottom */
+    width: 100vw; /* Full width footer */
+    bottom: 0;
+    left: 0;
+    box-sizing: border-box;
+}
+
+/* Main container styles */
+.dashboard-container {
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 20px;
+    background: white; /* White container for the main content */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 8px; /* Rounded corners */
+    max-height: 70vh; /* Limits the height to 70% of the viewport */
+    overflow-y: auto; /* Adds vertical scrolling if content exceeds height */
+}
+
+/* Header styles */
+header {
+    background-color: #4ac561;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+header nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0 0;
+    display: flex;
+    justify-content: center;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+header nav ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Section styles */
+.user-list h2 {
+    color: #4ac561;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.user-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.user-list table thead {
+    background-color: #4ac561;
+    color: white;
+}
+
+.user-list table th,
+.user-list table td {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd; /* Light gray borders for table cells */
+}
+
+.user-list table tbody tr:nth-child(even) {
+    background-color: #f9f9f9; /* Alternating row colors for readability */
+}
+
+.user-list table tbody tr:hover {
+    background-color: #f1f1f1; /* Highlight row on hover */
+}
+
+.user-list table button {
+    padding: 7px 10px;
+    background-color: #4ac561;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.user-list table button:hover {
+    background-color: #3aa94e;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #4ac561;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+}

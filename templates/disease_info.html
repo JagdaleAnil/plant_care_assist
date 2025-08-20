@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" class="disease-info">
+<head>
+    <meta charset="UTF-8">
+    <title>Disease Info</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="disease-info">
+    <div class="disease-info-container">
+        <div class="disease-info-top">
+            <img src="{{ url_for('static', filename='images/' + disease.name.lower().replace(' ', '_') + '.png') }}" alt="{{ disease.name }}">
+            <div class="disease-info-content">
+                <h3>{{ disease.plant.name }} - {{ disease.name }}</h3>
+                <p class="convert-br">{{ disease.description|safe }}</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2025 Plant Care Assist Project. All rights reserved.</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.convert-br');
+            elements.forEach(element => {
+                element.innerHTML = element.innerHTML.replace(/&lt;br&gt;/g, '<br>');
+            });
+        });
+    </script>
+</body>
+</html>
